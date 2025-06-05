@@ -1,2 +1,87 @@
 # ai_stock_trading
 ai_stock_trading
+
+
+
+AI 기반 주식 투자 로드맵 (파이썬 기본 문법 제외) - 상세 학습 계획
+이 로드맵은 파이썬 기본 문법을 이미 알고 있다는 전제 하에, Pandas, NumPy, 데이터 수집, AI 모델 개발, 전략 백테스팅, 그리고 실제 시스템 구축까지 이어지는 과정을 위한 상세 학습 계획입니다.
+
+1단계: Pandas/NumPy 데이터 분석 & 시각화 (1개월)
+목표: 데이터 분석의 핵심 도구인 Pandas, NumPy, Matplotlib/Seaborn 숙달
+주요 학습 내용:
+NumPy (수치 계산): ndarray 생성, 인덱싱, 슬라이싱, 배열 연산, 기본 통계 함수
+Pandas (데이터 처리 및 분석) - 가장 중요!
+Series와 DataFrame의 이해: 생성, 속성, 핵심 메서드
+데이터 불러오기/저장하기: read_csv(), read_excel(), to_csv()
+데이터 선택/필터링: loc, iloc, 불리언 인덱싱
+데이터 정렬: sort_values(), sort_index()
+데이터 그룹화 및 집계: groupby(), agg()
+결측치 처리: isnull(), dropna(), fillna()
+데이터 병합/연결: merge(), concat()
+날짜/시간 데이터 처리: to_datetime(), 시계열 인덱스 활용, resample()
+문자열 데이터 처리: str 접근자 활용
+Matplotlib / Seaborn (데이터 시각화):
+기본 플롯: 선 그래프, 산점도, 막대 그래프, 히스토그램
+서브플롯 생성 및 관리
+그래프 꾸미기: 제목, 축 레이블, 범례, 색상, 스타일
+주식 차트 그리기 연습: mplfinance 라이브러리 활용
+추천 자료:
+[인프런] 파이썬 데이터 분석 입문 (강사: 김수환)
+[유데미] 파이썬 데이터 분석 (강사: 박영웅)
+[Coursera] Data Analysis with Python (IBM)
+교재: '파이썬 라이브러리를 활용한 데이터 분석'(Wes McKinney 저) 2판
+2단계: 주식 데이터 수집 및 전처리 (3주 ~ 1개월)
+목표: 실제 주식 데이터를 수집하고 AI 모델 학습에 적합한 형태로 가공
+주요 학습 내용:
+주식 데이터 수집:
+FinanceDataReader: 국내/해외 주식, ETF, 지수 데이터 수집 (우선 학습)
+yfinance: 해외 주식 데이터 수집 (Yahoo Finance API)
+증권사 API (선택 사항, 난이도 높음): 키움증권 Open API, 신한금융투자 API 등
+웹 크롤링 기초 (선택 사항): requests, BeautifulSoup을 이용한 뉴스 헤드라인, 공시 정보 수집
+데이터 전처리 심화:
+기술적 지표 계산: pandas_ta 또는 ta-lib 라이브러리를 활용하여 이동평균선(MA), RSI, MACD, 볼린더 밴드 등 계산
+특징 공학(Feature Engineering): 주가 변동률, 거래량 변화율, 날짜 관련 특징 등 AI 학습에 유용한 새로운 변수 생성
+시계열 데이터 정합성 확인: 데이터 누락, 중복, 잘못된 날짜 처리
+스케일링 (정규화/표준화): MinMaxScaler, StandardScaler (Scikit-learn)를 사용하여 데이터 스케일 조정
+3단계: 머신러닝/딥러닝 기초 및 주식 데이터 적용 (1개월 ~ 2개월)
+목표: AI 모델의 기본 원리 이해 및 주식 데이터에 대한 적용 능력 습득
+주요 학습 내용:
+머신러닝 기본 개념: 지도 학습 (회귀, 분류), 모델 평가 지표 (MSE, R 
+2
+ , Accuracy, F1-score), 과적합과 일반화
+주요 머신러닝 알고리즘 (Scikit-learn): 선형 회귀, 로지스틱 회귀, 랜덤 포레스트 (Random Forest), XGBoost, LightGBM, SVM
+딥러닝 기초 (TensorFlow/Keras 또는 PyTorch):
+신경망 기본 구조, 활성화 함수, 손실 함수, 최적화 알고리즘
+순환 신경망 (RNN) 및 LSTM (Long Short-Term Memory): 시계열 데이터 예측에 특화된 모델 (주가 예측에 중요)
+추천 강의:
+[Coursera] Machine Learning (강사: Andrew Ng)
+[Coursera] Deep Learning Specialization (강사: Andrew Ng)
+[Udemy] Python for Data Science and Machine Learning Bootcamp (강사: Jose Portilla)
+[인프런] 모두의 딥러닝 (강사: 김성훈)
+교재: '핸즈온 머신러닝' (Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow)
+4단계: 주식 투자 전략 개발 및 백테스팅 (1개월 ~ 2개월)
+목표: AI 모델을 활용하여 투자 전략을 수립하고, 과거 데이터를 통해 전략의 효과를 검증
+주요 학습 내용:
+투자 전략 개념: AI 예측 기반 매수/매도 로직, 기술적 지표 결합
+백테스팅(Backtesting):
+파이썬 코드로 직접 매매 시뮬레이션 로직 구현 (수수료, 슬리피지 반영)
+백테스팅 프레임워크 활용: Backtrader (강력 추천!)
+백테스팅 결과 지표: 총 수익률, 연평균 수익률 (CAGR), 최대 낙폭 (Max Drawdown, MDD), 샤프 비율, 승률
+백테스팅 시 주의사항: 미래 데이터 사용 금지, 과최적화 경계
+위험 관리(Risk Management): 자산 배분, 손절매(Stop-loss), 포지션 사이징
+추천 강의:
+[인프런] 파이썬으로 배우는 알고리즘 트레이딩 A to Z (강사: 양정우)
+[유데미] 파이썬을 이용한 퀀트 투자 시스템 만들기 (강사: 이광석)
+5단계: 자동 매매 시스템 구축 및 지속적인 개선 (지속 학습 및 개선)
+목표: 개발한 AI 기반 전략을 실제 거래에 적용하고 지속적으로 관리, 개선
+주요 학습 내용:
+증권사 API 연동 심화: 실시간 시세 수신, 주문 전송, 잔고 조회, 에러 처리
+시스템 자동화: 클라우드 서버 (AWS EC2 등) 환경 구축, 스케줄링 (APScheduler, cron)
+모니터링 및 로깅: 거래 내역, 시스템 상태 기록 (logging 모듈), 실시간 알림 (텔레그램 연동)
+실전 적용 및 관리: 소액으로 시작, 리스크 관리, 모델 주기적 재학습 및 개선, 비상 계획
+학습 시 추가 팁:
+실습 위주 학습: 이론만으로는 부족합니다. 배운 내용을 직접 코드로 구현하고 데이터를 만져보세요.
+작게 시작: 처음부터 완벽한 시스템을 만들려 하지 말고, 작은 기능 하나하나를 구현하며 점진적으로 확장하세요.
+오픈 소스 적극 활용: 이미 잘 만들어진 라이브러리와 예제 코드를 분석하여 학습 시간을 단축하세요.
+커뮤니티 활용: 막히는 부분이 있다면 온라인 커뮤니티, 스터디 그룹 등에 적극적으로 질문하세요.
+지속적인 개선: 시장 상황은 끊임없이 변하므로, AI 모델과 전략을 주기적으로 업데이트하고 개선하는 노력이 필요합니다.
